@@ -17,14 +17,14 @@ void main() {
     getTeamsUseCase = GetTeamsUseCase(mockTeamRepository);
   });
 
-  const testTeam = TeamEntity(name: "testTeamName");
+  const testTeams = [TeamEntity(name: "testTeamName")];
 
   test('should get all teams from the repository', () async {
     when(mockTeamRepository.getTeams())
-        .thenAnswer((_) async => const Right(testTeam));
+        .thenAnswer((_) async => const Right(testTeams));
 
     final result = await getTeamsUseCase.execute();
 
-    expect(result, equals(const Right(testTeam)));
+    expect(result, equals(const Right(testTeams)));
   });
 }

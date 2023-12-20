@@ -7,7 +7,7 @@ class GetTeamsUseCase {
   final TeamRepository teamRepository;
   const GetTeamsUseCase(this.teamRepository);
 
-  Future<Either<Failure, TeamEntity>> execute() {
+  Future<Either<Failure, List<TeamEntity>>> execute() {
     return teamRepository.getTeams();
   }
 }
