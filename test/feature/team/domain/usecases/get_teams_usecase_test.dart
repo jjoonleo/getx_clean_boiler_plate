@@ -5,7 +5,7 @@ import 'package:getx_clean_boiler_plate/feature/team/domain/repositories/team_re
 import 'package:getx_clean_boiler_plate/feature/team/domain/usecases/get_teams_usecase.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../team/helpers/test_helper.mocks.dart';
+import '../../helpers/test_helper.mocks.dart';
 
 
 void main() {
