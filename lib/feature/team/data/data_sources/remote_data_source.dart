@@ -15,14 +15,20 @@ class TeamRemoteDataSourceImpl extends TeamRemoteDataSource {
 
   @override
   Future<List<TeamModel>> getTeamModels() async {
-    final response = await client.get(Uri.parse(Urls.allTeams));
+    // final response = await client.get(Uri.parse(Urls.allTeams));
 
-    if (response.statusCode == 200) {
-      return (json.decode(response.body) as List)
-      .map((data) => TeamModel.fromJson(data))
-      .toList();
-    } else {
-      throw ServerException();
-    }
+    // if (response.statusCode == 200) {
+    //   return (json.decode(response.body) as List)
+    //   .map((data) => TeamModel.fromJson(data))
+    //   .toList();
+    // } else {
+    //   throw ServerException();
+    // }
+    final dummy = [
+      const TeamModel(name: 'team1'),
+      const TeamModel(name: 'team2'),
+      const TeamModel(name: 'team3')
+    ];
+    return dummy;
   }
 }
