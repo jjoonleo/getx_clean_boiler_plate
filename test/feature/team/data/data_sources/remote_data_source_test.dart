@@ -23,14 +23,13 @@ void main() {
         mockHttpClient.get(Uri.parse(Urls.allTeams))
       ).thenAnswer((_) async =>
         http.Response(
-            readJson('feature/team/helpers/dummy_data/dummy_team_data.json'),
+            readJson('feature/team/helpers/dummy_data/dummy_teams_data.json'),
             200
           )
         );
 
-    final result = await teamRemoteDataSource.getTeamModels();
+      final result = await teamRemoteDataSource.getTeamModels();
 
-    expect(result, isA<TeamModel>());});
-    
-  });
+      expect(result, isA<List<TeamModel>>());
+    });
 }
