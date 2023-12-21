@@ -7,4 +7,5 @@ class TeamModel extends TeamEntity {
           name: name,
         );
 
+  factory TeamModel.fromJson(Map<String, dynamic> json) => TeamModel(name: json['name']);
 }
