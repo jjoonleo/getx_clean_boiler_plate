@@ -14,11 +14,19 @@ void main() {
   });
 
   test('should return a valid model from json', () async {
-    final Map<String, dynamic> jsonMap =
-        json.decode(readJson('feature/team/helpers/dummy_data/dummy_team_data.json'));
+    final Map<String, dynamic> jsonMap = json.decode(
+        readJson('feature/team/helpers/dummy_data/dummy_team_data.json'));
 
     final result = TeamModel.fromJson(jsonMap);
 
     expect(result, equals(testTeamModel));
+  });
+
+  test('should return a json map containing proper data', () async {
+    final result = testTeamModel.toJson();
+
+    final expectedJsonMap = {'name': 'testTeamName'};
+
+    expect(result, equals(expectedJsonMap));
   });
 }
