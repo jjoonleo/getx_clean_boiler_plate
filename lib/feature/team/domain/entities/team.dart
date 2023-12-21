@@ -1,7 +1,11 @@
-class TeamEntity {
+import 'package:equatable/equatable.dart';
+
+class TeamEntity extends Equatable {
+  final String name;
   const TeamEntity({
     required this.name,
   });
 
-  final String name;
+  @override
+  List<Object> get props => [name];
 }
