@@ -13,4 +13,6 @@ class TeamModel extends TeamEntity {
   Map<String, dynamic> toJson() => {
         'name': name,
       };
+
+  TeamEntity toEntity() => TeamEntity(name: name);
 }
