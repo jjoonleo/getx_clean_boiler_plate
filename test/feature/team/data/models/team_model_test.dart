@@ -13,4 +13,12 @@ void main() {
     expect(testTeamModel, isA<TeamEntity>());
   });
 
+  test('should return a valid model from json', () async {
+    final Map<String, dynamic> jsonMap =
+        json.decode(readJson('feature/team/helpers/dummy_data/dummy_team_data.json'));
+
+    final result = TeamModel.fromJson(jsonMap);
+
+    expect(result, equals(testTeamModel));
+  });
 }
